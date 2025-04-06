@@ -19,12 +19,11 @@ setup(
     author=pelican_exporter.__author__,
     author_email='jacob@thecorehosting.net',
     description='Metrics exporter for pelican',
-    install_requires=open('requirements.txt').readlines(),
     entry_points={
             'console_scripts': [
                 'pelican_exporter=pelican_exporter.pelican_exporter:main'
             ]
         },
-    pythong_requires=">=3.11",
+    python_requires='>=3.11',
     install_requires=INSTALL_REQUIRES
 )
