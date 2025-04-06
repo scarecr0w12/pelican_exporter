@@ -1,19 +1,19 @@
 {
-    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY pelican PANEL - pelican.IO",
     "meta": {
         "version": "PTDL_v2",
         "update_url": null
     },
     "exported_at": "2023-06-04T12:34:24+02:00",
-    "name": "Pterodactyl Exporter",
+    "name": "pelican Exporter",
     "author": "info@loens2.com",
-    "description": "The official Pterodactyl Egg for the Prometheus Exporter by LOENS2.",
+    "description": "The official pelican Egg for the Prometheus Exporter by LOENS2.",
     "features": null,
     "docker_images": {
         "Python 3.11": "ghcr.io\/parkervcp\/yolks:python_3.11"
     },
     "file_denylist": [],
-    "startup": "cd .python; python -m pterodactyl_exporter.pterodactyl_exporter --config-file=..\/config.yml",
+    "startup": "cd .python; python -m pelican_exporter.pelican_exporter --config-file=..\/config.yml",
     "config": {
         "files": "{\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"host\": \"{{server.build.env.HOSTNAME}}\",\r\n            \"port\": \"{{server.build.default.port}}\",\r\n            \"api_key\": \"{{server.build.env.API_KEY}}\",\r\n            \"https\": \"{{server.build.env.HTTPS}}\",\r\n            \"ignore_ssl\": \"{{server.build.env.IGNORE_SSL}}\",\r\n            \"server_list_type\": \"{{server.build.env.SERVER_LIST_TYPE}}\"\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \"Init successful!\"\r\n}",
@@ -22,7 +22,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# Python App Installation Script\r\n\r\napt update && apt upgrade -y\r\n\r\napt install -y curl\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nexport HOME=\/mnt\/server\r\n\r\nif [ -d \"\/home\/container\/pterodactyl_exporter\/\" ]; then\r\n    echo \"Installation found! Updating.\"\r\n    pip install -U --target .python --upgrade pterodactyl_exporter\r\nelse\r\n    pip install -U --target .python pterodactyl_exporter\r\nfi\r\n\r\nif ! [ -f \"\/home\/container\/config.yml\" ]; then\r\n    curl -fsSL -o config.yml https:\/\/raw.githubusercontent.com\/LOENS2\/pterodactyl_exporter\/master\/config.example.yml\r\nfi\r\n\r\necho -e \"Install process complete!\"\r\nexit 0",
+            "script": "#!\/bin\/bash\r\n# Python App Installation Script\r\n\r\napt update && apt upgrade -y\r\n\r\napt install -y curl\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nexport HOME=\/mnt\/server\r\n\r\nif [ -d \"\/home\/container\/pelican_exporter\/\" ]; then\r\n    echo \"Installation found! Updating.\"\r\n    pip install -U --target .python --upgrade pelican_exporter\r\nelse\r\n    pip install -U --target .python pelican_exporter\r\nfi\r\n\r\nif ! [ -f \"\/home\/container\/config.yml\" ]; then\r\n    curl -fsSL -o config.yml https:\/\/raw.githubusercontent.com\/LOENS2\/pelican_exporter\/master\/config.example.yml\r\nfi\r\n\r\necho -e \"Install process complete!\"\r\nexit 0",
             "container": "python:3.11-slim",
             "entrypoint": "bash"
         }
@@ -30,7 +30,7 @@
     "variables": [
         {
             "name": "Hostname",
-            "description": "The host name of the Pterodactyl Panel instance to be monitored",
+            "description": "The host name of the pelican Panel instance to be monitored",
             "env_variable": "HOSTNAME",
             "default_value": "",
             "user_viewable": true,
