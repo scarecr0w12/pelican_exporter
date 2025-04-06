@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve
 title: XYZ doesn't work as intended
 labels: bug
-assignees: LOENS2
+assignees: Scarecr0w12
 
 ---
 
@@ -25,7 +25,7 @@ If applicable, add screenshots to help explain your problem.
  - Version [e.g. 22.04]
  - Python version [e.g 3.11]
  - Prometheus version [e.g 2.37.0]
- - Pterodactyl Panel version [e.g. 1.10.1]
+ - Pelican Panel version [e.g. 1.10.1]
 
 **Additional context**
 Add any other context about the problem here.

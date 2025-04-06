@@ -1,19 +1,19 @@
 from setuptools import setup, find_packages
-import pterodactyl_exporter
+import pelican_exporter
 
 setup(
-    name='pterodactyl_exporter',
-    version=pterodactyl_exporter.__version__,
+    name='pelican_exporter',
+    version=pelican_exporter.__version__,
     packages=find_packages(),
-    url='https://github.com/LOENS2/pterodactyl_exporter',
-    license=pterodactyl_exporter.__license__,
-    author=pterodactyl_exporter.__author__,
-    author_email='info@loens2.com',
-    description='Metrics exporter for Pterodactyl',
+    url='https://github.com/scarecr0w12/pelican_exporter',
+    license=pelican_exporter.__license__,
+    author=pelican_exporter.__author__,
+    author_email='jacob@thecorehosting.net',
+    description='Metrics exporter for pelican',
     install_requires=open('requirements.txt').readlines(),
     entry_points={
             'console_scripts': [
-                'pterodactyl_exporter=pterodactyl_exporter.pterodactyl_exporter:main'
+                'pelican_exporter=pelican_exporter.pelican_exporter:main'
             ]
         }
 )

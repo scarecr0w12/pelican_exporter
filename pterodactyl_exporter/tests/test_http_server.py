@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import MagicMock
-from pterodactyl_exporter.http_server import HTTPServer
-from pterodactyl_exporter.dto.config import Config
-from pterodactyl_exporter.dto.metrics import Metrics
+from pelican_exporter.http_server import HTTPServer
+from pelican_exporter.dto.config import Config
+from pelican_exporter.dto.metrics import Metrics
 
 
 class TestHTTPServer(unittest.TestCase):

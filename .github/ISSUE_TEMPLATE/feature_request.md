@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 title: ''
 labels: enhancement
-assignees: LOENS2
+assignees: Scarecr0w12
 
 ---
 

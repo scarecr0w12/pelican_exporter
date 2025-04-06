@@ -8,7 +8,7 @@
             "name": "Python: Module",
             "type": "python",
             "request": "launch",
-            "module": "pterodactyl_exporter.pterodactyl_exporter",
+            "module": "pelican_exporter.pelican_exporter",
             "justMyCode": true
         }
     ]

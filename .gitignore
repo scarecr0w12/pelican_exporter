@@ -1,7 +1,7 @@
 #Pyton related stuff
 /dist/
 /build/
-/pterodactyl_exporter.egg-info/
+/pelican_exporter.egg-info/
 /venv/
 **/*/__pycache__
 

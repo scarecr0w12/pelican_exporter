@@ -1,10 +1,10 @@
-# Pterodactyl Exporter
+# Pelican Exporter
 
 ### Please use the Discussion for Support rather than the Issues.
 
-A python script that exports performance metrics from Pterodactyl Panel 1.x via the Client API, converts the data to the correct format and provides a prometheus target.
+A python script that exports performance metrics from Pelican Panel 1.x via the Client API, converts the data to the correct format and provides a prometheus target.
 
-This can be used for time series monitoring of Pterodactyl game servers and visualization with Grafana.
+This can be used for time series monitoring of Pelican game servers and visualization with Grafana.
 
 Feel free to try this script and submit an issue if needed.
 
@@ -15,13 +15,13 @@ Feel free to try this script and submit an issue if needed.
  * Linux server (should run on Windows as well, but is only tested in a linux environment)
  * Prometheus
  * Python (3.10)
- * Pterodactyl client API key 
+ * Pelican client API key 
    * Service account with read only is recommended
    * You only need to set `Backup->Read` as permission for the account to the server you want to monitor.
 
-## Run as Pterodactyl Server
+## Run as Pelican Server
 
- - Download the Egg JSON from `egg/egg-pterodactyl-exporter.json` or the releases
+ - Download the Egg JSON from `egg/egg-Pelican-exporter.json` or the releases
  - Import the Egg into the Nest of your choice
  - Create the server from the egg and fill in the required config values
  - Run the server
@@ -32,9 +32,9 @@ Feel free to try this script and submit an issue if needed.
 
  - To install with pip:
 ```
-pip install pterodactyl-exporter
+pip install Pelican-exporter
 ```
- - Create directory `pterodactyl_exporter`.
+ - Create directory `Pelican_exporter`.
  
  - Create the config file `config.yml` in that directory (set the values as needed, it's recommended to use https):
  
@@ -47,7 +47,7 @@ ignore_ssl: false
 server_list_type: owner
  ```
 
- - Create systemd service `/etc/systemd/system/pterodactyl_exporter.service`:
+ - Create systemd service `/etc/systemd/system/Pelican_exporter.service`:
 ```
 [Unit]
 Description=Prometheus Server
@@ -56,8 +56,8 @@ After=network-online.target
 [Service]
 User=prometheus
 Restart=on-failure
-ExecStart=pterodactyl_exporter \
---config-file=/home/prometheus/pterodactyl_exporter/config.yml
+ExecStart=Pelican_exporter \
+--config-file=/home/prometheus/Pelican_exporter/config.yml
 
 [Install]
 WantedBy=multi-user.target
@@ -68,7 +68,7 @@ WantedBy=multi-user.target
  - Add a job configuration:
  
  ```yml
- - job_name: 'pterodactyl_exporter'
+ - job_name: 'Pelican_exporter'
     static_configs:
       - targets: ['localhost:9531']
 
@@ -80,17 +80,17 @@ WantedBy=multi-user.target
  
 ## Run with Docker
 
- - Create a folder named `pterodactyl_exporter`
+ - Create a folder named `Pelican_exporter`
  
  - Download the config file from GitHub:
  ```
- curl -fsSL -o config.yml https://raw.githubusercontent.com/LOENS2/pterodactyl_exporter/master/config.example.yml
+ curl -fsSL -o config.yml https://raw.githubusercontent.com/LOENS2/Pelican_exporter/master/config.example.yml
  ```
  - Create a folder named `docker`
  
  - Download the `docker-compose.yml` into that folder:
  ```
- curl -fsSL -o docker-compose.yml https://raw.githubusercontent.com/LOENS2/pterodactyl_exporter/master/docker/docker-compose.yml
+ curl -fsSL -o docker-compose.yml https://raw.githubusercontent.com/LOENS2/Pelican_exporter/master/docker/docker-compose.yml
  ```
  - Run the container:
  ```
@@ -103,11 +103,11 @@ WantedBy=multi-user.target
 
  - Clone the project:
 ```
-git clone https://github.com/LOENS2/pterodactyl_exporter.git
+git clone https://github.com/LOENS2/Pelican_exporter.git
 ```
  - Change to the cloned directory
 ```
-cd pterodactyl_exporter
+cd Pelican_exporter
 ```
  - Install dependencies:
 ```
@@ -115,7 +115,7 @@ python -m pip install -r requirements.txt
 ```
  - Run with python:
 ```
-python -m pterodactyl_exporter.pterodactyl_exporter --config-file=config.example.yml
+python -m Pelican_exporter.Pelican_exporter --config-file=config.example.yml
 ```
 
 # Troubleshooting
